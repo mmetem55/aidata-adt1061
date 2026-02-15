@@ -5,6 +5,7 @@
 #
 ### 1) Kendi imaj dosyalarınızı (.img) flashlamak için bu komuttaki partition keyi "custom_key.bin" ile değiştirin. 
 
+```bash
 python avbtool.py make_vbmeta_image \                                                                                                                 ─╯
 --key rsa4096_vbmeta.pem \
 --algorithm SHA256_RSA4096 \
@@ -24,7 +25,7 @@ python avbtool.py make_vbmeta_image \                                           
 --chain_partition l_agdsp:12:keys/l_agdsp_key.bin \
 --chain_partition l_cdsp:13:keys/l_cdsp_key.bin \
 --output vbmeta-sign-custom.img
-
+```
 ### 2) Aşağıdaki komutu çalıştırın.
 
 python vbmeta_pad.py
@@ -38,7 +39,7 @@ python vbmeta_pad.py
 python avbtool.py info_image --image xxx.img 
 
 ### 5) Aşağıdaki çıktı gibi bir çıktı çıkacakdır bunu bir yere not edin. Image Size: (Örn: 36700160) Partition Name: (Örn: boot) Salt: (Örn: 7495b86f...e6f0b44e35)
-
+```bash
 Footer version:           1.0
 Image size:               36700160 bytes
 Original image size:      19062784 bytes
@@ -64,10 +65,10 @@ Descriptors:
       Digest:                ab9c1ec5eb56f0ac8a9658ec71bcc46afe8165be27e8a2f66a2536ec06ec3693
       Flags:                 0
     Prop: com.android.build.boot.os_version -> '10'
-
+```
 ### 6) Aşağıdaki komuttaki "xxxx" yazılı parametleri kaydettiğiniz çıktıya göre düzenleyin ve komutu çalıştırın.
 ### Komut hata vermeden çalışırsa imzalanmış imaj dosyanız hazır demektir.
-
+```bash
 python avbtool.py add_hash_footer \                                                                                                                 
 --image xxxx.img \
 --partition_name xxxx \
@@ -75,4 +76,4 @@ python avbtool.py add_hash_footer \
 --key custom_key.pem \
 --algorithm SHA256_RSA4096 \
 --salt xxxx
-
+```
