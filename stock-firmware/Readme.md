@@ -1,4 +1,4 @@
-> [!TIP]
+> 
 > **Stock ROM İndirme Bağlantısı**
 >
 > Yazılımı aşağıdaki bağlantıdan güvenli bir şekilde indirebilirsiniz:
