@@ -1,6 +1,7 @@
 # Aşağıdaki adımları takip ederek Aidata Alim 10 cihazı için imzalı vbmeta dosyası oluşturabilirsiniz. Ayrıca vbmeta imajına uygun şekilde kendi imajlarınızıda imzalayabilirsiniz.
 # 
-# 1) Kendi imaj dosyalarınızı (.img) flashlamak için bu komuttaki partition keyi "custom_key.bin" ile değiştirin. 
+#
+### 1) Kendi imaj dosyalarınızı (.img) flashlamak için bu komuttaki partition keyi "custom_key.bin" ile değiştirin. 
 
 python avbtool.py make_vbmeta_image \                                                                                                                 ─╯
 --key rsa4096_vbmeta.pem \
@@ -22,19 +23,19 @@ python avbtool.py make_vbmeta_image \                                           
 --chain_partition l_cdsp:13:keys/l_cdsp_key.bin \
 --output vbmeta-sign-custom.img
 
-# 2) Aşağıdaki komutu çalıştırın.
+### 2) Aşağıdaki komutu çalıştırın.
 
 python vbmeta_pad.py
 
-# "--- Dosya flashlanmaya hazır ---" custom çıktısını gördüyseniz vbmeta dosyanız hazır demektir.
+### "--- Dosya flashlanmaya hazır ---" custom çıktısını gördüyseniz vbmeta dosyanız hazır demektir.
 
-# 3) Oluşturduğunuz veya flashlamak istediğiniz imajı bu klasöre kopyalayın.
+### 3) Oluşturduğunuz veya flashlamak istediğiniz imajı bu klasöre kopyalayın.
 
-# 4) Aşağıdaki komutunun "xxx" bölümünü değiştirmek istediğiniz bölümün adını yazın ve komutu çalıştırın.
+### 4) Aşağıdaki komutunun "xxx" bölümünü değiştirmek istediğiniz bölümün adını yazın ve komutu çalıştırın.
 
 python avbtool.py info_image --image xxx.img 
 
-# 5) Aşağıdaki çıktı gibi bir çıktı çıkacakdır bunu bir yere not edin. Image Size: (Örn: 36700160) Partition Name: (Örn: boot) Salt: (Örn: 7495b86f...e6f0b44e35)
+### 5) Aşağıdaki çıktı gibi bir çıktı çıkacakdır bunu bir yere not edin. Image Size: (Örn: 36700160) Partition Name: (Örn: boot) Salt: (Örn: 7495b86f...e6f0b44e35)
 
 Footer version:           1.0
 Image size:               36700160 bytes
@@ -62,8 +63,8 @@ Descriptors:
       Flags:                 0
     Prop: com.android.build.boot.os_version -> '10'
 
-# 6) Aşağıdaki komuttaki "xxxx" yazılı parametleri kaydettiğiniz çıktıya göre düzenleyin ve komutu çalıştırın.
-# Komut hata vermeden çalışırsa imzalanmış imaj dosyanız hazır demektir.
+### 6) Aşağıdaki komuttaki "xxxx" yazılı parametleri kaydettiğiniz çıktıya göre düzenleyin ve komutu çalıştırın.
+### Komut hata vermeden çalışırsa imzalanmış imaj dosyanız hazır demektir.
 
 python avbtool.py add_hash_footer \                                                                                                                 
 --image xxxx.img \
