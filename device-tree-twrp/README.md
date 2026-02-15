@@ -1,10 +1,3 @@
-#
-# Copyright (C) 2026 The Android Open Source Project
-# Copyright (C) 2026 SebaUbuntu's TWRP device tree generator
-#
-# SPDX-License-Identifier: Apache-2.0
-#
-
 # Android device tree for AIDATA Alim 10 (ADT1061)
 
 ## Device Information
@@ -49,3 +42,10 @@ Panel Type: IPS LCD
 Refresh Rate: 60 Hz
 
 Pixel Density: 213 dpi
+
+
+####
+#### Copyright (C) 2026 The Android Open Source Project
+#### Copyright (C) 2026 SebaUbuntu's TWRP device tree generator
+#### SPDX-License-Identifier: Apache-2.0
+####
