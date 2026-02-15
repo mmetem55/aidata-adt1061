@@ -1,25 +1,25 @@
 # Android device tree for AIDATA Alim 10 (ADT1061)
 
-## Device Information
+## Cihaz Bilgileri
 
-### Manufacturer: AIDATA
+### Üretici: AIDATA
 
 ### Model: ADT1061
 
-### Platform Codename: ums512
+### Platform kodadı: ums512
 
-### Device Type: Tablet
+### Cihaz tipi: Tablet
 
-### Architecture: aarch64 (arm64-v8a)
+### Mimari: aarch64 (arm64-v8a)
 
-### Android Version: 10
+### Android Versiyonu: 10
 
-### API Level: 29
+### API Seviyesi: 29
 
 
 ## Hardware Specifications
 
-### Chipset: Unisoc UMS512 (Spreadtrum platform)
+### Çipset: Unisoc UMS512 (Spreadtrum platform)
 
 ### CPU: Octa-core ARMv8-A
 
@@ -31,17 +31,17 @@
 
 OpenGL ES 3.2
 
-### Memory: LPDDR4X 3.0 GB
+### Bellek: LPDDR4X 3.0 GB
 
-### Display
+### Ekran
 
-Resolution: 1200 × 1920
+Çözümürlük: 1200 × 1920
 
-Panel Type: IPS LCD
+Panel Tipi: IPS LCD
 
-Refresh Rate: 60 Hz
+Yenileme Hızı: 60 Hz
 
-Pixel Density: 213 dpi
+Piksel Yoğunluğu: 213 dpi
 
 
 
