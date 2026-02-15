@@ -38,7 +38,10 @@ python vbmeta_pad.py
 
 python avbtool.py info_image --image xxx.img 
 
-### 5) Aşağıdaki çıktı gibi bir çıktı çıkacakdır bunu bir yere not edin. Image Size: (Örn: 36700160) Partition Name: (Örn: boot) Salt: (Örn: 7495b86f...e6f0b44e35)
+### 5) Aşağıdaki çıktı gibi bir çıktı çıkacakdır bunu bir yere not edin. 
+Image Size: (Örn: 36700160) 
+Partition Name: (Örn: boot) 
+Salt: (Örn: 7495b86f...e6f0b44e35)
 ```bash
 Footer version:           1.0
 Image size:               36700160 bytes
