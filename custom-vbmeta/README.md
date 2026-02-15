@@ -27,9 +27,9 @@ python avbtool.py make_vbmeta_image \                                           
 --output vbmeta-sign-custom.img
 ```
 ### 2) Aşağıdaki komutu çalıştırın.
-
+```bash
 python vbmeta_pad.py
-
+```
 ### "--- Dosya flashlanmaya hazır ---" custom çıktısını gördüyseniz vbmeta dosyanız hazır demektir.
 
 ### 3) Oluşturduğunuz veya flashlamak istediğiniz imajı bu klasöre kopyalayın.
