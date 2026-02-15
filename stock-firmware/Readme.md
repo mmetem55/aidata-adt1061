@@ -1,1 +1,1 @@
-  [Stock ROM Google Drive Download link ](https://drive.google.com/file/d/1o91mxjVr45sHmsMbCKf942ampXMTrkRW/view?usp=sharing)
+  [Stock ROM Google Drive İndirme linki ](https://drive.google.com/file/d/1o91mxjVr45sHmsMbCKf942ampXMTrkRW/view?usp=sharing)
