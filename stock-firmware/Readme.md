@@ -1,1 +1,1 @@
-[Stock ROM Mediafire link ](https://www.mediafire.com/file/39x146hzjlv09x2/Aidata-Alim-Adt1061_fix_rom.rar)
+  [Stock ROM Google Drive Download link ](https://drive.google.com/file/d/1o91mxjVr45sHmsMbCKf942ampXMTrkRW/view?usp=sharing)
