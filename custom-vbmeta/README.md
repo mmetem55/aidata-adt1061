@@ -1,6 +1,8 @@
 # Aşağıdaki adımları takip ederek Aidata Alim 10 cihazı için imzalı vbmeta dosyası oluşturabilirsiniz. Ayrıca vbmeta imajına uygun şekilde kendi imajlarınızıda imzalayabilirsiniz.
 # 
 #
+## Başlamadan önce bu klasörü [indirin](https://drive.google.com/file/d/1i4MIuPpgBDSdMoQ-jzBdJU6tQvy7LjXM/view?usp=sharing) ve çıkartın.
+#
 ### 1) Kendi imaj dosyalarınızı (.img) flashlamak için bu komuttaki partition keyi "custom_key.bin" ile değiştirin. 
 
 python avbtool.py make_vbmeta_image \                                                                                                                 ─╯
