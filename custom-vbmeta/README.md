@@ -30,14 +30,14 @@ python avbtool.py make_vbmeta_image \                                           
 ```bash
 python vbmeta_pad.py
 ```
-### "--- Dosya flashlanmaya hazır ---" custom çıktısını gördüyseniz vbmeta dosyanız hazır demektir.
+### "--- Dosya flashlanmaya hazır ---" çıktısını gördüyseniz vbmeta dosyanız hazır demektir.
 
 ### 3) Oluşturduğunuz veya flashlamak istediğiniz imajı bu klasöre kopyalayın.
 
 ### 4) Aşağıdaki komutunun "xxx" bölümünü değiştirmek istediğiniz bölümün adını yazın ve komutu çalıştırın.
-
+```bash
 python avbtool.py info_image --image xxx.img 
-
+```
 ### 5) Aşağıdaki çıktı gibi bir çıktı çıkacakdır bunu bir yere not edin. 
 Image Size: (Örn: 36700160) 
 Partition Name: (Örn: boot) 
