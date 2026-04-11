@@ -434,3 +434,14 @@ on property:ro.bootmode=factorytest
 
 on property:ro.bootmode=factorytest && property:ro.debuggable=0
     setprop sys.usb.config vser
+
+service fix_misc /system/bin/dd if=/dev/zero of=/dev/block/platform/soc/soc:ap-apb/71400000.sdio/by-name/misc bs=256 count=1 conv=notrunc
+    user root
+    group root
+    oneshot
+    disabled
+    seclabel u:r:recovery:s0
+
+on property:ro.bootmode=recovery
+    wait /dev/block/platform/soc/soc:ap-apb/71400000.sdio/by-name/misc 5
+    start fix_misc
