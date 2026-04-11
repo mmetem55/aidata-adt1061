@@ -1,7 +1,7 @@
 > 
 > **Stock ROM İndirme Bağlantısı**
 >
-> Yazılımı aşağıdaki bağlantıdan güvenli bir şekilde indirebilirsiniz:
+> ROM'u aşağıdaki bağlantıdan güvenli bir şekilde indirebilirsiniz:
 >
 > 📂 **Dosya:** Stock ROM (Aidata Alim 10 / ums512)
 > 
