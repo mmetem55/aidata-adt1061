@@ -1,4 +1,4 @@
-AIDATA ADT1061 (UMS512) - TWRP & Custom VBMETA
+**AIDATA ADT1061 (UMS512) - TWRP & Custom VBMETA**
 
 📦 TWRP Recovery (twrp.img)
 
