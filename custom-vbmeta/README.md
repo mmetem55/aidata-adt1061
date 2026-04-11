@@ -77,6 +77,5 @@ python avbtool.py add_hash_footer \
 --partition_name xxxx \
 --partition_size xxxx \
 --key custom_key.pem \
---algorithm SHA256_RSA4096 \
---salt xxxx
+--algorithm SHA256_RSA4096
 ```
