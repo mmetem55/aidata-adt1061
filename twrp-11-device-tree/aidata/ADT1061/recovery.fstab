@@ -1,0 +1,25 @@
+# mount point    fstype    device                                                              flags
+/boot            emmc      /dev/block/platform/soc/soc:ap-apb/71400000.sdio/by-name/boot       flags=display="Boot";backup=1;flashimg=1
+/recovery        emmc      /dev/block/platform/soc/soc:ap-apb/71400000.sdio/by-name/recovery   flags=display="Recovery";backup=1;flashimg=1
+/dtbo            emmc      /dev/block/platform/soc/soc:ap-apb/71400000.sdio/by-name/dtbo       flags=display="DTBO";backup=1;flashimg=1
+/vbmeta          emmc      /dev/block/platform/soc/soc:ap-apb/71400000.sdio/by-name/vbmeta     flags=display="VBMeta";backup=1;flashimg=1
+
+# logical
+/system_root  ext4  /dev/block/dm-0  flags=display="System";backup=1;wipeingui;flashimg=1
+/vendor       ext4  /dev/block/dm-1  flags=display="Vendor";backup=1;wipeingui;flashimg=1
+/product      ext4  /dev/block/dm-2  flags=display="Product";backup=1;wipeingui;flashimg=1
+
+# userdata
+/data     f2fs  /dev/block/by-name/userdata  flags=display="Data";backup=1;wait;keydirectory=/metadata/vold/metadata_encryption
+/cache    ext4      /dev/block/platform/soc/soc:ap-apb/71400000.sdio/by-name/cache      flags=display="Cache"
+/persist  ext4  /dev/block/by-name/persist  flags=display="Persist";backup=1;wait;check
+
+# imei vb
+/misc            emmc    /dev/block/platform/soc/soc:ap-apb/71400000.sdio/by-name/misc
+/logo            emmc      /dev/block/platform/soc/soc:ap-apb/71400000.sdio/by-name/logo       flags=display="Logo";backup=1;flashimg=1
+/socko           ext4      /dev/block/platform/soc/soc:ap-apb/71400000.sdio/by-name/socko      flags=display="Socko";backup=1
+/odmko           ext4      /dev/block/platform/soc/soc:ap-apb/71400000.sdio/by-name/odmko      flags=display="Odmko";backup=1
+
+# external
+/external_sd     vfat      /dev/block/mmcblk1p1                                                flags=display="MicroSD";storage;wipeingui;removable
+/usb_otg         vfat      /dev/block/sda1 /dev/block/sda                                      flags=display="USB-OTG";storage;wipeingui;removable

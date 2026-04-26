@@ -1,0 +1,156 @@
+#
+# Copyright (C) 2026 The Android Open Source Project
+# Copyright (C) 2026 SebaUbuntu's TWRP device tree generator
+#
+# SPDX-License-Identifier: Apache-2.0
+#
+
+DEVICE_PATH := device/aidata/ADT1061
+
+# For building with minimal manifest
+ALLOW_MISSING_DEPENDENCIES := true
+
+# Architecture
+TARGET_ARCH := arm64
+TARGET_ARCH_VARIANT := armv8-a
+TARGET_CPU_ABI := arm64-v8a
+TARGET_CPU_ABI2 := 
+TARGET_CPU_VARIANT := generic
+TARGET_CPU_VARIANT_RUNTIME := cortex-a75
+
+TARGET_2ND_ARCH := arm
+TARGET_2ND_ARCH_VARIANT := armv7-a-neon
+TARGET_2ND_CPU_ABI := armeabi-v7a
+TARGET_2ND_CPU_ABI2 := armeabi
+TARGET_2ND_CPU_VARIANT := generic
+TARGET_2ND_CPU_VARIANT_RUNTIME := cortex-a55
+
+# APEX
+DEXPREOPT_GENERATE_APEX_IMAGE := true
+
+# Bootloader
+TARGET_BOOTLOADER_BOARD_NAME := ums512_1h10
+TARGET_NO_BOOTLOADER := true
+
+# Display
+TARGET_SCREEN_DENSITY := 213
+
+# Kernel
+BOARD_BOOTIMG_HEADER_VERSION := 2
+BOARD_KERNEL_BASE           := 0x00000000
+BOARD_KERNEL_PAGESIZE       := 2048
+BOARD_RAMDISK_OFFSET        := 0x05400000
+BOARD_KERNEL_TAGS_OFFSET    := 0x00000100
+BOARD_KERNEL_CMDLINE        := console=ttyS1,115200n8 earlycon=sprd_serial,0x70100000 androidboot.selinux=permissive rdinit=/init
+
+# Prebuilt
+TARGET_PREBUILT_KERNEL      := $(DEVICE_PATH)/prebuilt/kernel
+BOARD_PREBUILT_DTBIMAGE     := $(DEVICE_PATH)/prebuilt/dtb.img
+BOARD_PREBUILT_DTBOIMAGE    := $(DEVICE_PATH)/prebuilt/dtbo.img
+
+# copy file
+PRODUCT_COPY_FILES += \
+    $(BOARD_PREBUILT_DTBIMAGE):dtb.img \
+    $(DEVICE_PATH)/recovery/root/init.recovery.usb.rc:recovery/root/init.recovery.usb.rc
+
+# Boot Image Arguments
+BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOTIMG_HEADER_VERSION)
+BOARD_MKBOOTIMG_ARGS += --ramdisk_offset $(BOARD_RAMDISK_OFFSET)
+BOARD_MKBOOTIMG_ARGS += --tags_offset $(BOARD_KERNEL_TAGS_OFFSET)
+BOARD_MKBOOTIMG_ARGS += --dtb $(BOARD_PREBUILT_DTBIMAGE)
+
+# Image Type & DTB Settings
+BOARD_KERNEL_IMAGE_NAME      := kernel
+BOARD_INCLUDE_DTB_IN_BOOTIMG := true
+TARGET_FORCE_PREBUILT_KERNEL := true
+
+# Partitions
+BOARD_FLASH_BLOCK_SIZE := 131072
+BOARD_BOOTIMAGE_PARTITION_SIZE := 36700160
+BOARD_RECOVERYIMAGE_PARTITION_SIZE := 41943040
+BOARD_HAS_LARGE_FILESYSTEM := true
+BOARD_SYSTEMIMAGE_PARTITION_TYPE := ext4
+BOARD_USERDATAIMAGE_FILE_SYSTEM_TYPE := ext4
+BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4
+BOARD_PRODUCTIMAGE_FILE_SYSTEM_TYPE := ext4
+TARGET_COPY_OUT_VENDOR := vendor
+TARGET_COPY_OUT_PRODUCT := product
+BOARD_SUPER_PARTITION_SIZE := 4831838208
+BOARD_SUPER_PARTITION_GROUPS := group_unisoc
+BOARD_GROUP_UNISOC_PARTITION_LIST := system vendor product
+BOARD_GROUP_UNISOC_SIZE := 4827643904
+
+# Platform
+TARGET_BOARD_PLATFORM := ums512
+
+# Recovery
+BOARD_INCLUDE_RECOVERY_DTBO := true
+TARGET_RECOVERY_PIXEL_FORMAT := RGBX_8888
+TARGET_USERIMAGES_USE_EXT4 := true
+TARGET_USERIMAGES_USE_F2FS := true
+
+
+# Verified Boot
+BOARD_AVB_ENABLE := true
+BOARD_AVB_RECOVERY_KEY_PATH := external/avb/test/data/custom_key.pem
+BOARD_AVB_RECOVERY_ALGORITHM := SHA256_RSA4096
+BOARD_AVB_RECOVERY_ROLLBACK_INDEX := 0
+BOARD_AVB_RECOVERY_ROLLBACK_INDEX_LOCATION := 0
+
+# OS version and security patch
+PLATFORM_VERSION_LAST_STABLE := 10
+PLATFORM_SECURITY_PATCH := 2021-02-01
+VENDOR_SECURITY_PATCH := 2021-02-01
+PLATFORM_VERSION := 10.0.0
+
+# TWRP Configuration
+TW_THEME := portrait_hdpi
+TW_EXTRA_LANGUAGES := false
+TW_SCREEN_BLANK_ON_BOOT := true
+TW_INPUT_BLACKLIST := "hbtp_vm"
+TW_USE_TOOLBOX := true
+TW_INCLUDE_CRYPTO := true
+TW_INCLUDE_CRYPTO_FBE := true
+
+# usb
+TW_HAS_MTP := true
+TW_EXCLUDE_DEFAULT_USB_INIT := true
+TARGET_RECOVERY_USB_ID_VENDOR := 0x1782
+TARGET_RECOVERY_USB_ID_PRODUCT := 0x4003
+TW_RECOVERY_ADDITIONAL_RELPROP += \
+    sys.usb.controller=musb-hdrc.0.auto \
+    sys.usb.configfs=1 \
+    persist.sys.usb.config=mtp,adb \
+    ro.recovery.usb.vid=0x1782 \
+    ro.recovery.usb.pid=0x4003
+TW_INTERNAL_STORAGE_PATH := "/data/media/0"
+TW_INTERNAL_STORAGE_MOUNT_POINT := "data"
+TW_EXTERNAL_STORAGE_PATH := "/external_sd"
+TW_EXTERNAL_STORAGE_MOUNT_POINT := "external_sd"
+
+# Display
+TW_BRIGHTNESS_PATH := "/sys/class/backlight/sprd_backlight/brightness"
+TW_MAX_BRIGHTNESS := 255
+TW_DEFAULT_BRIGHTNESS := 150
+
+TARGET_RECOVERY_DEVICE_MODULES += \
+    android.hardware.boot@1.0-impl \
+    android.hardware.boot@1.0-service \
+    android.hardware.fastboot@1.0-service \
+    android.hardware.fastboot@1.0-impl \
+    android.hardware.health@2.1-impl \
+    android.hardware.health@2.1-service \
+    libbase \
+    libion \
+    libhidlbase \
+    libutils \
+    libfastboot \
+    libadbusbd \
+    libxml2 \
+    libc++ \
+    libvintf
+TW_INCLUDE_LPDUMP := true
+TW_INCLUDE_LIBLP := true
+TW_EXCLUDE_LVTN := true
+TW_INCLUDE_FASTBOOTD := true
+TW_FASTBOOTD_IFACE_NAME := "fastboot"
